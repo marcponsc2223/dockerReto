@@ -12,6 +12,7 @@ services:
       - ./src:/var/www
       - ./nginx/conf.d/:/etc/nginx/conf.d/
       - ./landing:/landing
+      # - ./src
     depends_on:
       - app
       - db

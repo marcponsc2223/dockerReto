@@ -62,8 +62,8 @@ RUN chmod 777 /root/dockerReto/lemp-app/src/
 USER composeruser
 
 # Cambiar al directorio deseado
-WORKDIR /root/dockerReto/lemp-app/src/
-RUN ls -la /root/dockerReto/lemp-app/src/
+WORKDIR /dockerReto/lemp-app/src/
+RUN ls -la /dockerReto/lemp-app/src/
 # hola
 # Install dependencies
 RUN composer install --no-plugins --no-scripts

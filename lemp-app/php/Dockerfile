@@ -62,7 +62,7 @@ RUN useradd -m composeruser
 USER composeruser
 
 # Cambiar al directorio deseado
-WORKDIR ../src/
+WORKDIR ./src
 
 # Install dependencies
 RUN composer install --no-plugins --no-scripts

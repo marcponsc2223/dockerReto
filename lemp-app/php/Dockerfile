@@ -55,18 +55,12 @@ RUN apt-get install -y libpq-dev \
     && docker-php-ext-install pdo pdo_pgsql pgsql
 
 
-# Set working directory
-WORKDIR /var/www
+# Install dependencies
+RUN composer install --no-dev --prefer-dist --no-scripts --no-progress --no-suggest
 
-# Copy the composer.json and composer.lock file
-COPY src/composer.json /var/www/composer.json
-COPY src/composer.lock /var/www/composer.lock
-
-# Copy the vendor directory
-COPY vendor /var/www/vendor
 
 # Copy the rest of the application
-COPY src /var/www
+# COPY src /var/www
 
 # Set permissions
-RUN chown -R www-data:www-data /var/www
+# RUN chown -R www-data:www-data /var/www

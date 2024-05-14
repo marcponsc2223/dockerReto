@@ -62,7 +62,7 @@ RUN useradd -m composeruser
 USER composeruser
 
 # Cambiar al directorio deseado
-WORKDIR /root/dockerReto/lemp-app/src
+WORKDIR /root/dockerReto/lemp-app/src/
 
 # Install dependencies
 RUN composer install --no-plugins --no-scripts

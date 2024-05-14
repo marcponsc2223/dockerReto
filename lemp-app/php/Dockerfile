@@ -56,7 +56,7 @@ RUN apt-get install -y libpq-dev \
 
 
 # Install dependencies
-RUN composer install --no-dev --prefer-dist --no-scripts --no-progress --no-suggest
+RUN composer install 
 
 
 # Copy the rest of the application

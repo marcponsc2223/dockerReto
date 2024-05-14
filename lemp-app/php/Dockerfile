@@ -55,7 +55,11 @@ RUN apt-get install -y libpq-dev \
     && docker-php-ext-install pdo pdo_pgsql pgsql
 
 
+# Crear un usuario específico para Composer
+RUN useradd -m composeruser
+
+# Cambiar al usuario específico
+USER composeruser
+
 # Install dependencies
-RUN composer install --no-plugins
-
-
+RUN composer install --no-plugins --no-scripts

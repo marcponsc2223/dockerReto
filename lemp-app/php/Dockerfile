@@ -57,7 +57,7 @@ RUN apt-get install -y libpq-dev \
 
 # Crear un usuario específico para Composer
 RUN useradd -m composeruser
-RUN chmod 777 /root/dockerReto/lemp-app/src/
+# RUN chmod 777 /root/dockerReto/lemp-app/src/
 # Cambiar al usuario específico
 USER composeruser
 

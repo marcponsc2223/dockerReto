@@ -53,3 +53,20 @@ RUN apt-get -y install --fix-missing \
 RUN apt-get install -y libpq-dev \
     && docker-php-ext-configure pgsql -with-pgsql=/usr/local/pgsql \
     && docker-php-ext-install pdo pdo_pgsql pgsql
+
+
+# Set working directory
+WORKDIR /var/www
+
+# Copy the composer.json and composer.lock file
+COPY src/composer.json /var/www/composer.json
+COPY src/composer.lock /var/www/composer.lock
+
+# Copy the vendor directory
+COPY vendor /var/www/vendor
+
+# Copy the rest of the application
+COPY src /var/www
+
+# Set permissions
+RUN chown -R www-data:www-data /var/www

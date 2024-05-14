@@ -1,4 +1,8 @@
 const { defineConfig } = require('@vue/cli-service')
 module.exports = defineConfig({
-  transpileDependencies: true
+  devServer: {
+    port: 8080, // Puerto del servidor de desarrollo
+    disableHostCheck: true // Habilitar esta opción para solucionar el error "Invalid Host header"
+  },
+  transpileDependencies: true // Transpilar dependencias
 })

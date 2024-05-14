@@ -56,11 +56,6 @@ RUN apt-get install -y libpq-dev \
 
 
 # Install dependencies
-RUN composer install 
+RUN composer install --no-plugins
 
 
-# Copy the rest of the application
-# COPY src /var/www
-
-# Set permissions
-# RUN chown -R www-data:www-data /var/www

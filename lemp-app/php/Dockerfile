@@ -1,10 +1,10 @@
 FROM php:8.2.11-fpm
 
 # Install composer
-RUN echo "\e[1;33mInstall COMPOSER\e[0m"
-RUN cd /tmp \
-    && curl -sS https://getcomposer.org/installer | php \
-    && mv composer.phar /usr/local/bin/composer
+# RUN echo "\e[1;33mInstall COMPOSER\e[0m"
+# RUN cd /tmp \
+#     && curl -sS https://getcomposer.org/installer | php \
+#     && mv composer.phar /usr/local/bin/composer
 
 RUN docker-php-ext-install pdo pdo_mysql
 
@@ -56,13 +56,13 @@ RUN apt-get install -y libpq-dev \
 
 
 # Crear un usuario específico para Composer
-RUN useradd -m composeruser
+# RUN useradd -m composeruser
 # RUN chmod 777 /root/dockerReto/lemp-app/src/
 # Cambiar al usuario específico
-USER composeruser
+# USER composeruser
 
 # Cambiar al directorio deseado
 # WORKDIR /dockerReto/lemp-app/src/
 # hola..
 # Install dependencies
-RUN composer install --no-plugins --no-scripts
+# RUN composer install --no-plugins --no-scripts
